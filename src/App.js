@@ -2,11 +2,22 @@ import './style/App.css';
 import Navbar from './components/navbar';
 import Hero from './components/hero';
 import Card from './components/card';
-import img1 from './images/image1.png';
-import img2 from './images/wedding.png';
-import img3 from './images/mountain.png';
+import Data from './data.js';
 
 function App() {
+  const cards = Data.map((item) => {
+    return (
+      <Card
+        img={item.coverImg}
+        rating={item.stats.rating}
+        reviewCount={item.stats.reviewCount}
+        location={item.location}
+        title={item.title}
+        price={item.price}
+      />
+    );
+  });
+
   return (
     <div>
       <header>
@@ -14,9 +25,7 @@ function App() {
       </header>
       <main>
         <Hero />
-        <Card img={img1} />
-        <Card img={img2} />
-        <Card img={img3} />
+        {cards}
       </main>
     </div>
   );

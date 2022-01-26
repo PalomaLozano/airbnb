@@ -1,4 +1,6 @@
-import starIcon from '../images/star.png';
+//import img1 from '../imagestwo/image1.png';
+
+import starIcon from '../imagestwo/star.png';
 
 const Card = (props) => {
   return (
@@ -10,12 +12,12 @@ const Card = (props) => {
       />
       <div className="card--stats">
         <img src={starIcon} alt="star icon" className="card--star" />
-        <span className="grey">{props.star}</span>
-        <span className="grey">{props.comments}</span>
-        <span className="grey">{props.place}</span>
+        <span className="grey">{props.rating}</span>
+        <span className="grey">{props.reviewCount}</span>
+        <span className="grey">-{props.location}</span>
       </div>
-      <p>{props.description}</p>
-      <p className="bold">{props.price}</p>
+      <p>{props.title}</p>
+      <p className="bold">{props.price}€</p>
     </div>
   );
 };
